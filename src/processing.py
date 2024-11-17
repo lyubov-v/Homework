@@ -2,7 +2,7 @@ def filter_by_state(info: list, state="EXECUTED") -> list:
     """Фильтрует список по значению state"""
     new_info = []
     for position in info:
-        if position["state"] == state:
+        if position.get("state") == state:
             new_info.append(position)
         else:
             continue
