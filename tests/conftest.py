@@ -29,10 +29,11 @@ def non_state():
     ]
 
 @pytest.fixture
-def incorrect_date():
+def none_date():
     return [
-        {"id": 41428829, "state": "EXECUTED", "date": "03.07.2019T18:35:29.512364"},
-        {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
-        {"id": 594226727, "state": "CANCELED", "date": "12.09.2018T21:27:25.241689"},
-        {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21"},
+        {"id": 41428829, "state": "EXECUTED"},
+        {"id": 939719570, "state": "EXECUTED"},
+        {"id": 594226727, "state": "CANCELED"},
+        {"id": 615064591, "state": "CANCELED"},
     ]
+
