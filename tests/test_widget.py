@@ -6,7 +6,7 @@ from src.widget import get_date, mask_account_card
 def test_mask_account_card(widget_info_and_result):
     for i in widget_info_and_result:
 
-        for key,value in i.items():
+        for key, value in i.items():
             assert mask_account_card(key) == value
 
 
