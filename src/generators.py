@@ -100,7 +100,8 @@ for _ in range(5):
     print(next(descriptions))
 
 
-def card_number_generator(start,stop):
+def card_number_generator(start:int,stop:int)->str:
+    """Генерирует номера карт в 16 разрядном формате"""
     numbers = (x for x in range(start, stop+1))
     for i in numbers:
         new_number = str(i).zfill(16)
