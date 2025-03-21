@@ -81,10 +81,20 @@ transactions =[
 def filter_by_currency(transactions:List[Dict], iter:str)-> Dict:
     """Принимает список транзакций,возвращает итератор, соответствующий заданному"""
     for transaction in transactions:
-        if transaction.get('operationAmount', {}).get('currency', {}).get('code') == iter:
+        if transaction.get("operationAmount", {}).get("currency", {}).get("code") == iter:
             yield transaction
 
 
 usd_transactions = filter_by_currency(transactions, "USD")
 for _ in range(3):
     print(next(usd_transactions))
+
+
+def transaction_descriptions(transactions:List[Dict])-> str:
+    for transaction in transactions:
+        yield transaction.get("description")
+
+
+descriptions = transaction_descriptions(transactions)
+for _ in range(5):
+    print(next(descriptions))
