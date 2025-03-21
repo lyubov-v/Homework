@@ -98,3 +98,14 @@ def transaction_descriptions(transactions:List[Dict])-> str:
 descriptions = transaction_descriptions(transactions)
 for _ in range(5):
     print(next(descriptions))
+
+
+def card_number_generator(start,stop):
+    numbers = (x for x in range(start, stop+1))
+    for i in numbers:
+        new_number = str(i).zfill(16)
+        card_number = f"{new_number[0:4]} {new_number[4:8]} {new_number[8:12]} {new_number[12:]}"
+        yield card_number
+
+for card_number in card_number_generator(1, 8):
+    print(card_number)
