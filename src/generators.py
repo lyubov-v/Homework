@@ -128,7 +128,11 @@ except:
 
 
 def transaction_descriptions(transactions:List[Dict])-> str:
+    if transactions == [{}]:
+        yield {}
     for transaction in transactions:
+        if transaction.get("description") == None:
+            yield ""
         yield transaction.get("description")
 
 

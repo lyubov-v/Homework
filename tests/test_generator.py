@@ -69,3 +69,12 @@ def test_filter_by_currency_without_rub(transactions_without_RUB):
     assert result == {}
 
 
+def test_transaction_descriptions(transactions):
+    gen = transaction_descriptions(transactions)
+    assert next(gen) == "Перевод организации"
+    assert next(gen) == "Перевод со счета на счет"
+
+
+def test_transaction_discriptions_without_discription(none_discription):
+    gen = transaction_descriptions(none_discription)
+    assert next(gen) == ""
