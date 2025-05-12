@@ -81,13 +81,13 @@ transactions =[
 
 def filter_by_currency(transactions:List[Dict], currency:str)-> Dict or str:
     """Принимает список транзакций,возвращает словарь, с заданной валютой"""
-    try:
-        if transactions == [{}]:
+    if transactions == [{}]:
+        yield {}
+    for transaction in transactions:
+        if transaction.get("operationAmount", {}).get("currency", {}).get("code") == None:
             yield {}
-        for transaction in transactions:
-            if transaction.get("operationAmount", {}).get("currency", {}).get("code") == currency:
-                yield transaction
-    except: yield {}
+        if transaction.get("operationAmount", {}).get("currency", {}).get("code") == currency:
+            yield transaction
             
 
 usd_transactions = filter_by_currency([
