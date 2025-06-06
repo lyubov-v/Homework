@@ -1,4 +1,4 @@
-def filter_by_state(info: list, state="EXECUTED") -> list:
+def filter_by_state(info: list, state: str = "EXECUTED") -> list:
     """Фильтрует список по значению state"""
     new_info = []
     for position in info:
@@ -9,7 +9,7 @@ def filter_by_state(info: list, state="EXECUTED") -> list:
     return new_info
 
 
-def sort_by_date(info: list, ascending=True) -> list:
+def sort_by_date(info: list, ascending: bool = True) -> list:
     """Сортирует список по дате(убывание)"""
     sort_info = []
     for position in info:
