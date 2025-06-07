@@ -1,1 +1,14 @@
 get_date OK
+positve_summ OK
+get_date OK
+positve_summ OK
+get_date OK
+positve_summ OK
+get_date OK
+positve_summ OK
+get_date OK
+positve_summ OK
+get_date OK
+positve_summ error cannot access local variable 'result' where it is not associated with a value arguments: (-1, 8), {}get_date OK
+get_date OK
+get_date OK
